@@ -15,6 +15,16 @@
 		6D38864426443817001CFE62 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D38864226443817001CFE62 /* LaunchScreen.storyboard */; };
 		6D38864F26443818001CFE62 /* GitHubFollowersAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D38864E26443818001CFE62 /* GitHubFollowersAppTests.swift */; };
 		6D38865A26443818001CFE62 /* GitHubFollowersAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D38865926443818001CFE62 /* GitHubFollowersAppUITests.swift */; };
+		6D38867726444645001CFE62 /* GHTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D38867626444645001CFE62 /* GHTabBarController.swift */; };
+		6D3886822644481F001CFE62 /* UserNameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3886802644481F001CFE62 /* UserNameVC.swift */; };
+		6D3886832644481F001CFE62 /* UserNameVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D3886812644481F001CFE62 /* UserNameVC.xib */; };
+		6D3886892644483E001CFE62 /* FollowersListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3886872644483E001CFE62 /* FollowersListVC.swift */; };
+		6D38868A2644483E001CFE62 /* FollowersListVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D3886882644483E001CFE62 /* FollowersListVC.xib */; };
+		6D38868F26444A79001CFE62 /* AccessibilityIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D38868E26444A79001CFE62 /* AccessibilityIdentifiers.swift */; };
+		6D38869426444A86001CFE62 /* AppMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D38869326444A86001CFE62 /* AppMessages.swift */; };
+		6D38869926444A97001CFE62 /* ErrorMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D38869826444A97001CFE62 /* ErrorMessages.swift */; };
+		6D3886A026444BC7001CFE62 /* FavouritesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D38869E26444BC7001CFE62 /* FavouritesVC.swift */; };
+		6D3886A126444BC7001CFE62 /* FavouritesVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D38869F26444BC7001CFE62 /* FavouritesVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +59,16 @@
 		6D38865526443818001CFE62 /* GitHubFollowersAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitHubFollowersAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D38865926443818001CFE62 /* GitHubFollowersAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubFollowersAppUITests.swift; sourceTree = "<group>"; };
 		6D38865B26443818001CFE62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6D38867626444645001CFE62 /* GHTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHTabBarController.swift; sourceTree = "<group>"; };
+		6D3886802644481F001CFE62 /* UserNameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNameVC.swift; sourceTree = "<group>"; };
+		6D3886812644481F001CFE62 /* UserNameVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserNameVC.xib; sourceTree = "<group>"; };
+		6D3886872644483E001CFE62 /* FollowersListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersListVC.swift; sourceTree = "<group>"; };
+		6D3886882644483E001CFE62 /* FollowersListVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FollowersListVC.xib; sourceTree = "<group>"; };
+		6D38868E26444A79001CFE62 /* AccessibilityIdentifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityIdentifiers.swift; sourceTree = "<group>"; };
+		6D38869326444A86001CFE62 /* AppMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMessages.swift; sourceTree = "<group>"; };
+		6D38869826444A97001CFE62 /* ErrorMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessages.swift; sourceTree = "<group>"; };
+		6D38869E26444BC7001CFE62 /* FavouritesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesVC.swift; sourceTree = "<group>"; };
+		6D38869F26444BC7001CFE62 /* FavouritesVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavouritesVC.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +119,12 @@
 		6D3886362644380F001CFE62 /* GitHubFollowersApp */ = {
 			isa = PBXGroup;
 			children = (
+				6D3886742644457D001CFE62 /* Utilities */,
+				6D388671264444DD001CFE62 /* Extensions */,
+				6D388670264444BF001CFE62 /* Managers */,
+				6D38866F264444B9001CFE62 /* ViewModel */,
+				6D38866E264444B4001CFE62 /* View */,
+				6D38866D264444AE001CFE62 /* Model */,
 				6D3886372644380F001CFE62 /* AppDelegate.swift */,
 				6D3886392644380F001CFE62 /* SceneDelegate.swift */,
 				6D38863B2644380F001CFE62 /* ViewController.swift */,
@@ -126,6 +152,106 @@
 				6D38865B26443818001CFE62 /* Info.plist */,
 			);
 			path = GitHubFollowersAppUITests;
+			sourceTree = "<group>";
+		};
+		6D38866D264444AE001CFE62 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6D38866E264444B4001CFE62 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6D38867326444569001CFE62 /* CustomViews */,
+				6D3886722644454C001CFE62 /* ViewControllers */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6D38866F264444B9001CFE62 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		6D388670264444BF001CFE62 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		6D388671264444DD001CFE62 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		6D3886722644454C001CFE62 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				6D38869D26444BA4001CFE62 /* FavouritesVC */,
+				6D38867F264446A2001CFE62 /* FollowersListVC */,
+				6D38867E2644468D001CFE62 /* UserNameVC */,
+				6D38867526444611001CFE62 /* TabBarController */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		6D38867326444569001CFE62 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		6D3886742644457D001CFE62 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				6D38868E26444A79001CFE62 /* AccessibilityIdentifiers.swift */,
+				6D38869326444A86001CFE62 /* AppMessages.swift */,
+				6D38869826444A97001CFE62 /* ErrorMessages.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		6D38867526444611001CFE62 /* TabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				6D38867626444645001CFE62 /* GHTabBarController.swift */,
+			);
+			path = TabBarController;
+			sourceTree = "<group>";
+		};
+		6D38867E2644468D001CFE62 /* UserNameVC */ = {
+			isa = PBXGroup;
+			children = (
+				6D3886802644481F001CFE62 /* UserNameVC.swift */,
+				6D3886812644481F001CFE62 /* UserNameVC.xib */,
+			);
+			path = UserNameVC;
+			sourceTree = "<group>";
+		};
+		6D38867F264446A2001CFE62 /* FollowersListVC */ = {
+			isa = PBXGroup;
+			children = (
+				6D3886872644483E001CFE62 /* FollowersListVC.swift */,
+				6D3886882644483E001CFE62 /* FollowersListVC.xib */,
+			);
+			path = FollowersListVC;
+			sourceTree = "<group>";
+		};
+		6D38869D26444BA4001CFE62 /* FavouritesVC */ = {
+			isa = PBXGroup;
+			children = (
+				6D38869E26444BC7001CFE62 /* FavouritesVC.swift */,
+				6D38869F26444BC7001CFE62 /* FavouritesVC.xib */,
+			);
+			path = FavouritesVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,6 +357,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D3886A126444BC7001CFE62 /* FavouritesVC.xib in Resources */,
+				6D3886832644481F001CFE62 /* UserNameVC.xib in Resources */,
+				6D38868A2644483E001CFE62 /* FollowersListVC.xib in Resources */,
 				6D38864426443817001CFE62 /* LaunchScreen.storyboard in Resources */,
 				6D38864126443817001CFE62 /* Assets.xcassets in Resources */,
 				6D38863F2644380F001CFE62 /* Main.storyboard in Resources */,
@@ -258,8 +387,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D3886822644481F001CFE62 /* UserNameVC.swift in Sources */,
 				6D38863C2644380F001CFE62 /* ViewController.swift in Sources */,
 				6D3886382644380F001CFE62 /* AppDelegate.swift in Sources */,
+				6D38867726444645001CFE62 /* GHTabBarController.swift in Sources */,
+				6D38868F26444A79001CFE62 /* AccessibilityIdentifiers.swift in Sources */,
+				6D38869926444A97001CFE62 /* ErrorMessages.swift in Sources */,
+				6D3886A026444BC7001CFE62 /* FavouritesVC.swift in Sources */,
+				6D38869426444A86001CFE62 /* AppMessages.swift in Sources */,
+				6D3886892644483E001CFE62 /* FollowersListVC.swift in Sources */,
 				6D38863A2644380F001CFE62 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
