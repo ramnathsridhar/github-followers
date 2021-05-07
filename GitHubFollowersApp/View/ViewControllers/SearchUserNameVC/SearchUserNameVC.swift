@@ -45,6 +45,7 @@ extension SearchUserNameVC:SearchUserNameFlowDelegate{
     func getUserNameFollowersSuccessful() {
         let followersListVC = FollowersListVC.init()
         followersListVC.title = self.userNameViewModel?.enteredUsername ?? String.empty
+        followersListVC.followersListVM = FollowersListViewModel.init(delegate: followersListVC, userName: self.userNameViewModel?.enteredUsername ?? String.empty)
         self.navigationController?.pushViewController(followersListVC, animated: true)
     }
     

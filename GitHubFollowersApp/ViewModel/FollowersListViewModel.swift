@@ -44,7 +44,6 @@ public class FollowersListViewModel {
                 case .success(let followersListFromResponse):
                     if followersListFromResponse.isEmpty{
                         self.hasMoreFollowers = false
-                        return
                     }
                     self.followersDelegate?.getFollowersSuccessful(followersList: self.getTheAppendedListOfFollowers(newListOfFollowers: followersListFromResponse))
                 case .failure(let errorMessage):
