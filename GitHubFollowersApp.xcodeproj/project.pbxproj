@@ -16,8 +16,6 @@
 		6D38864F26443818001CFE62 /* GitHubFollowersAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D38864E26443818001CFE62 /* GitHubFollowersAppTests.swift */; };
 		6D38865A26443818001CFE62 /* GitHubFollowersAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D38865926443818001CFE62 /* GitHubFollowersAppUITests.swift */; };
 		6D38867726444645001CFE62 /* GHTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D38867626444645001CFE62 /* GHTabBarController.swift */; };
-		6D3886822644481F001CFE62 /* UserNameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3886802644481F001CFE62 /* UserNameVC.swift */; };
-		6D3886832644481F001CFE62 /* UserNameVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D3886812644481F001CFE62 /* UserNameVC.xib */; };
 		6D3886892644483E001CFE62 /* FollowersListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3886872644483E001CFE62 /* FollowersListVC.swift */; };
 		6D38868A2644483E001CFE62 /* FollowersListVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D3886882644483E001CFE62 /* FollowersListVC.xib */; };
 		6D38868F26444A79001CFE62 /* AccessibilityIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D38868E26444A79001CFE62 /* AccessibilityIdentifiers.swift */; };
@@ -25,6 +23,14 @@
 		6D38869926444A97001CFE62 /* ErrorMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D38869826444A97001CFE62 /* ErrorMessages.swift */; };
 		6D3886A026444BC7001CFE62 /* FavouritesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D38869E26444BC7001CFE62 /* FavouritesVC.swift */; };
 		6D3886A126444BC7001CFE62 /* FavouritesVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D38869F26444BC7001CFE62 /* FavouritesVC.xib */; };
+		6D3886B12644FDDD001CFE62 /* SearchUserNameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3886AF2644FDDD001CFE62 /* SearchUserNameVC.swift */; };
+		6D3886B22644FDDD001CFE62 /* SearchUserNameVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D3886B02644FDDD001CFE62 /* SearchUserNameVC.xib */; };
+		6D3886B72644FF54001CFE62 /* SearchUserNameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3886B62644FF54001CFE62 /* SearchUserNameViewModel.swift */; };
+		6D3886BC2644FFC5001CFE62 /* FollowerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3886BB2644FFC5001CFE62 /* FollowerModel.swift */; };
+		6D3886C12645009D001CFE62 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3886C02645009D001CFE62 /* String+Ext.swift */; };
+		6D3886C62645016D001CFE62 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3886C52645016D001CFE62 /* NetworkManager.swift */; };
+		6D3886CB26450668001CFE62 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3886CA26450668001CFE62 /* UIViewController+Ext.swift */; };
+		6D3886D026450B4B001CFE62 /* FollowersListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3886CF26450B4B001CFE62 /* FollowersListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,8 +66,6 @@
 		6D38865926443818001CFE62 /* GitHubFollowersAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubFollowersAppUITests.swift; sourceTree = "<group>"; };
 		6D38865B26443818001CFE62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6D38867626444645001CFE62 /* GHTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHTabBarController.swift; sourceTree = "<group>"; };
-		6D3886802644481F001CFE62 /* UserNameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNameVC.swift; sourceTree = "<group>"; };
-		6D3886812644481F001CFE62 /* UserNameVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserNameVC.xib; sourceTree = "<group>"; };
 		6D3886872644483E001CFE62 /* FollowersListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersListVC.swift; sourceTree = "<group>"; };
 		6D3886882644483E001CFE62 /* FollowersListVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FollowersListVC.xib; sourceTree = "<group>"; };
 		6D38868E26444A79001CFE62 /* AccessibilityIdentifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityIdentifiers.swift; sourceTree = "<group>"; };
@@ -69,6 +73,14 @@
 		6D38869826444A97001CFE62 /* ErrorMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessages.swift; sourceTree = "<group>"; };
 		6D38869E26444BC7001CFE62 /* FavouritesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesVC.swift; sourceTree = "<group>"; };
 		6D38869F26444BC7001CFE62 /* FavouritesVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavouritesVC.xib; sourceTree = "<group>"; };
+		6D3886AF2644FDDD001CFE62 /* SearchUserNameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUserNameVC.swift; sourceTree = "<group>"; };
+		6D3886B02644FDDD001CFE62 /* SearchUserNameVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchUserNameVC.xib; sourceTree = "<group>"; };
+		6D3886B62644FF54001CFE62 /* SearchUserNameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUserNameViewModel.swift; sourceTree = "<group>"; };
+		6D3886BB2644FFC5001CFE62 /* FollowerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerModel.swift; sourceTree = "<group>"; };
+		6D3886C02645009D001CFE62 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
+		6D3886C52645016D001CFE62 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		6D3886CA26450668001CFE62 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
+		6D3886CF26450B4B001CFE62 /* FollowersListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +169,7 @@
 		6D38866D264444AE001CFE62 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				6D3886BB2644FFC5001CFE62 /* FollowerModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -173,6 +186,8 @@
 		6D38866F264444B9001CFE62 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				6D3886B62644FF54001CFE62 /* SearchUserNameViewModel.swift */,
+				6D3886CF26450B4B001CFE62 /* FollowersListViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -180,6 +195,7 @@
 		6D388670264444BF001CFE62 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				6D3886C52645016D001CFE62 /* NetworkManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -187,6 +203,8 @@
 		6D388671264444DD001CFE62 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				6D3886C02645009D001CFE62 /* String+Ext.swift */,
+				6D3886CA26450668001CFE62 /* UIViewController+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -194,9 +212,9 @@
 		6D3886722644454C001CFE62 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				6D3886A826444E5F001CFE62 /* SearchUserNameVC */,
 				6D38869D26444BA4001CFE62 /* FavouritesVC */,
 				6D38867F264446A2001CFE62 /* FollowersListVC */,
-				6D38867E2644468D001CFE62 /* UserNameVC */,
 				6D38867526444611001CFE62 /* TabBarController */,
 			);
 			path = ViewControllers;
@@ -227,15 +245,6 @@
 			path = TabBarController;
 			sourceTree = "<group>";
 		};
-		6D38867E2644468D001CFE62 /* UserNameVC */ = {
-			isa = PBXGroup;
-			children = (
-				6D3886802644481F001CFE62 /* UserNameVC.swift */,
-				6D3886812644481F001CFE62 /* UserNameVC.xib */,
-			);
-			path = UserNameVC;
-			sourceTree = "<group>";
-		};
 		6D38867F264446A2001CFE62 /* FollowersListVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -252,6 +261,15 @@
 				6D38869F26444BC7001CFE62 /* FavouritesVC.xib */,
 			);
 			path = FavouritesVC;
+			sourceTree = "<group>";
+		};
+		6D3886A826444E5F001CFE62 /* SearchUserNameVC */ = {
+			isa = PBXGroup;
+			children = (
+				6D3886AF2644FDDD001CFE62 /* SearchUserNameVC.swift */,
+				6D3886B02644FDDD001CFE62 /* SearchUserNameVC.xib */,
+			);
+			path = SearchUserNameVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -358,10 +376,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				6D3886A126444BC7001CFE62 /* FavouritesVC.xib in Resources */,
-				6D3886832644481F001CFE62 /* UserNameVC.xib in Resources */,
 				6D38868A2644483E001CFE62 /* FollowersListVC.xib in Resources */,
 				6D38864426443817001CFE62 /* LaunchScreen.storyboard in Resources */,
 				6D38864126443817001CFE62 /* Assets.xcassets in Resources */,
+				6D3886B22644FDDD001CFE62 /* SearchUserNameVC.xib in Resources */,
 				6D38863F2644380F001CFE62 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -387,15 +405,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6D3886822644481F001CFE62 /* UserNameVC.swift in Sources */,
 				6D38863C2644380F001CFE62 /* ViewController.swift in Sources */,
 				6D3886382644380F001CFE62 /* AppDelegate.swift in Sources */,
+				6D3886CB26450668001CFE62 /* UIViewController+Ext.swift in Sources */,
 				6D38867726444645001CFE62 /* GHTabBarController.swift in Sources */,
+				6D3886C12645009D001CFE62 /* String+Ext.swift in Sources */,
 				6D38868F26444A79001CFE62 /* AccessibilityIdentifiers.swift in Sources */,
 				6D38869926444A97001CFE62 /* ErrorMessages.swift in Sources */,
+				6D3886BC2644FFC5001CFE62 /* FollowerModel.swift in Sources */,
 				6D3886A026444BC7001CFE62 /* FavouritesVC.swift in Sources */,
 				6D38869426444A86001CFE62 /* AppMessages.swift in Sources */,
 				6D3886892644483E001CFE62 /* FollowersListVC.swift in Sources */,
+				6D3886C62645016D001CFE62 /* NetworkManager.swift in Sources */,
+				6D3886D026450B4B001CFE62 /* FollowersListViewModel.swift in Sources */,
+				6D3886B12644FDDD001CFE62 /* SearchUserNameVC.swift in Sources */,
+				6D3886B72644FF54001CFE62 /* SearchUserNameViewModel.swift in Sources */,
 				6D38863A2644380F001CFE62 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
