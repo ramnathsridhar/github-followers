@@ -15,12 +15,13 @@ class GHTabBarController : UITabBarController{
     
     //Creating the search user VC to add it in the tab bar
      func createSearchNavigationController() -> UINavigationController{
-         let userNameVC = UserNameVC()
-         userNameVC.title = AppMessages.searchUsername
+         let searchUserNameVC = SearchUserNameVC()
+        searchUserNameVC.userNameViewModel = SearchUserNameViewModel.init(delegate: searchUserNameVC)
+        searchUserNameVC.title = AppMessages.searchUsername
          //Setting the icon in the tab bar to the default search icon
-         userNameVC.tabBarItem = UITabBarItem.init(tabBarSystemItem: .search, tag: 0)
-         userNameVC.tabBarItem.accessibilityIdentifier = AccessibilityIdentifers.searchTabBarButton
-         return UINavigationController(rootViewController: userNameVC)
+        searchUserNameVC.tabBarItem = UITabBarItem.init(tabBarSystemItem: .search, tag: 0)
+        searchUserNameVC.tabBarItem.accessibilityIdentifier = AccessibilityIdentifers.searchTabBarButton
+         return UINavigationController(rootViewController: searchUserNameVC)
      }
      
      //Creating the favourites VC to add it in the tab bar

@@ -14,8 +14,9 @@ enum ErrorMessages : String , Error {
     case invalidData = "The data received from server is invalid."
     case unableToAddFavourite = "Unable to add  username to favourites."
     case alreadyInFavourite = "Username already added as favourite"
-    case enterValidCityName = "Please enter a valid username"
+    case enterValidUsername = "Please enter a valid username"
     case errorString = "Error"
     case unableToFetchFavourtie = "Error trying to fetch favourite . Please try again ."
     case noFavAdded = "No Favourites Added"
+    case userHasNoMoreFollowers = "User has no more followers"
 }
