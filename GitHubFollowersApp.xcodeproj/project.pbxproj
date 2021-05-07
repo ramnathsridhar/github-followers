@@ -31,6 +31,9 @@
 		6D3886C62645016D001CFE62 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3886C52645016D001CFE62 /* NetworkManager.swift */; };
 		6D3886CB26450668001CFE62 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3886CA26450668001CFE62 /* UIViewController+Ext.swift */; };
 		6D3886D026450B4B001CFE62 /* FollowersListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3886CF26450B4B001CFE62 /* FollowersListViewModel.swift */; };
+		6D3886D72645105A001CFE62 /* FollowerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3886D52645105A001CFE62 /* FollowerCollectionViewCell.swift */; };
+		6D3886D82645105A001CFE62 /* FollowerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D3886D62645105A001CFE62 /* FollowerCollectionViewCell.xib */; };
+		6D3886DD264511E3001CFE62 /* UIImageView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3886DC264511E3001CFE62 /* UIImageView+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +84,9 @@
 		6D3886C52645016D001CFE62 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		6D3886CA26450668001CFE62 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		6D3886CF26450B4B001CFE62 /* FollowersListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersListViewModel.swift; sourceTree = "<group>"; };
+		6D3886D52645105A001CFE62 /* FollowerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerCollectionViewCell.swift; sourceTree = "<group>"; };
+		6D3886D62645105A001CFE62 /* FollowerCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FollowerCollectionViewCell.xib; sourceTree = "<group>"; };
+		6D3886DC264511E3001CFE62 /* UIImageView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,6 +211,7 @@
 			children = (
 				6D3886C02645009D001CFE62 /* String+Ext.swift */,
 				6D3886CA26450668001CFE62 /* UIViewController+Ext.swift */,
+				6D3886DC264511E3001CFE62 /* UIImageView+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -223,6 +230,7 @@
 		6D38867326444569001CFE62 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				6D3886D426451038001CFE62 /* FollowerCollectionViewCell */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -270,6 +278,15 @@
 				6D3886B02644FDDD001CFE62 /* SearchUserNameVC.xib */,
 			);
 			path = SearchUserNameVC;
+			sourceTree = "<group>";
+		};
+		6D3886D426451038001CFE62 /* FollowerCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				6D3886D52645105A001CFE62 /* FollowerCollectionViewCell.swift */,
+				6D3886D62645105A001CFE62 /* FollowerCollectionViewCell.xib */,
+			);
+			path = FollowerCollectionViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -377,6 +394,7 @@
 			files = (
 				6D3886A126444BC7001CFE62 /* FavouritesVC.xib in Resources */,
 				6D38868A2644483E001CFE62 /* FollowersListVC.xib in Resources */,
+				6D3886D82645105A001CFE62 /* FollowerCollectionViewCell.xib in Resources */,
 				6D38864426443817001CFE62 /* LaunchScreen.storyboard in Resources */,
 				6D38864126443817001CFE62 /* Assets.xcassets in Resources */,
 				6D3886B22644FDDD001CFE62 /* SearchUserNameVC.xib in Resources */,
@@ -413,9 +431,11 @@
 				6D38868F26444A79001CFE62 /* AccessibilityIdentifiers.swift in Sources */,
 				6D38869926444A97001CFE62 /* ErrorMessages.swift in Sources */,
 				6D3886BC2644FFC5001CFE62 /* FollowerModel.swift in Sources */,
+				6D3886D72645105A001CFE62 /* FollowerCollectionViewCell.swift in Sources */,
 				6D3886A026444BC7001CFE62 /* FavouritesVC.swift in Sources */,
 				6D38869426444A86001CFE62 /* AppMessages.swift in Sources */,
 				6D3886892644483E001CFE62 /* FollowersListVC.swift in Sources */,
+				6D3886DD264511E3001CFE62 /* UIImageView+Ext.swift in Sources */,
 				6D3886C62645016D001CFE62 /* NetworkManager.swift in Sources */,
 				6D3886D026450B4B001CFE62 /* FollowersListViewModel.swift in Sources */,
 				6D3886B12644FDDD001CFE62 /* SearchUserNameVC.swift in Sources */,
