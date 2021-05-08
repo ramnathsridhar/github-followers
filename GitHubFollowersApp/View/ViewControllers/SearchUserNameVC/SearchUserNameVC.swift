@@ -11,18 +11,21 @@ class SearchUserNameVC: UIViewController {
 
     @IBOutlet weak var logoImageView: UIImageView!
     @IBOutlet weak var userNameTextField: UITextField!
-    @IBOutlet weak var searchButton: UIButton!
+    @IBOutlet weak var searchButton: PrimaryButton!
     
     var userNameViewModel:SearchUserNameViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupUI()
+        self.dismissKeybordFunction()
     }
 
     //Code to modify UI properties to elements on screen
     func setupUI(){
         self.searchButton.layer.cornerRadius = 10
+        self.searchButton.backgroundColor = .black
+        self.searchButton.setTitleColor(.white, for: .normal)
         self.logoImageView.layer.cornerRadius = 10
         self.userNameTextField.returnKeyType = .search
     }

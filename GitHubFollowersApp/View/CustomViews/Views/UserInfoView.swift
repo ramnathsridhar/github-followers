@@ -57,17 +57,17 @@ class UserInfoView: UIView {
         func set(userInfoType:UserInfoType, with count:Int){
             switch userInfoType {
             case .repos:
-                self.symbolImageView.image = UIImage(systemName: AppSymbols.repos)
-                self.titleLabel.text = "Public Repos"
+                self.symbolImageView.image = UIImage(systemName: ImageConstants.repos)
+                self.titleLabel.text = AppMessages.publicRepos
             case .followers:
-                self.symbolImageView.image = UIImage(systemName: AppSymbols.followers)
-                self.titleLabel.text = "Followers"
+                self.symbolImageView.image = UIImage(systemName: ImageConstants.followers)
+                self.titleLabel.text = AppMessages.followersString
             case .following:
-                self.symbolImageView.image = UIImage(systemName: AppSymbols.following)
-                self.titleLabel.text = "Following"
+                self.symbolImageView.image = UIImage(systemName: ImageConstants.following)
+                self.titleLabel.text = AppMessages.followingString
             case .gists:
-                self.symbolImageView.image = UIImage(systemName: AppSymbols.gists)
-                self.titleLabel.text = "Public Gists"
+                self.symbolImageView.image = UIImage(systemName: ImageConstants.gists)
+                self.titleLabel.text = AppMessages.publicGists
             }
             self.countTitleLabel.text = String(count)
         }

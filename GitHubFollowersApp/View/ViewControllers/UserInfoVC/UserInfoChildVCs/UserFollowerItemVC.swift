@@ -16,7 +16,7 @@ class UserFollowerItemVC: UserInfoItemVC {
     private func configureItems(){
         itemInfoViewOne.set(userInfoType: .followers, with: self.user.followers)
         itemInfoViewTwo.set(userInfoType: .following, with: self.user.following)
-        actionButton.set(backgroundColour: .systemGreen, title: "Get Followers")
+        actionButton.set(backgroundColour: .black, title: AppMessages.getFollowers)
     }
     
     override func actionButtonTapped() {

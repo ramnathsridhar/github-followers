@@ -11,6 +11,7 @@ extension String{
     public static let empty = ""
     public static let hash = "#"
     public static let percentage = "%"
+    public static let colon = ":"
     
     func convertToDate() -> Date?{
         let dateFormatter = DateFormatter()

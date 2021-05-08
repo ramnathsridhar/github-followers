@@ -10,6 +10,8 @@ import UIKit
 class GHTabBarController : UITabBarController{
     override func viewDidLoad() {
         super.viewDidLoad()
+        UITabBar.appearance().tintColor = .black
+        UINavigationBar.appearance().tintColor = .black
         self.viewControllers = [createSearchNavigationController(),createFavouritesNavigationController()]
     }
     

@@ -16,7 +16,7 @@ class UserRepoItemVC: UserInfoItemVC {
     private func configureItems(){
         itemInfoViewOne.set(userInfoType: .repos, with: self.user.public_repos)
         itemInfoViewTwo.set(userInfoType: .gists, with: self.user.public_gists)
-        actionButton.set(backgroundColour: .systemPurple, title: "Git Profile")
+        actionButton.set(backgroundColour: .black, title: AppMessages.gitProfile)
     }
     
     override func actionButtonTapped() {

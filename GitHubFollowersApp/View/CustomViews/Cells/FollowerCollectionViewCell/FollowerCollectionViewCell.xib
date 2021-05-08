@@ -16,8 +16,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="182" height="138"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar-placeholder-dark" translatesAutoresizingMaskIntoConstraints="NO" id="aFc-cO-lcu">
-                        <rect key="frame" x="0.0" y="0.0" width="182" height="80"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar-placeholder-dark" translatesAutoresizingMaskIntoConstraints="NO" id="aFc-cO-lcu" customClass="UserAvatarImageView" customModule="GitHubFollowersApp" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="10" width="182" height="80"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="80" id="D9S-nF-vxS"/>
                         </constraints>
@@ -37,7 +37,7 @@
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="Bd1-gL-DYI" secondAttribute="trailing" id="OfM-fW-egl"/>
                 <constraint firstAttribute="trailing" secondItem="aFc-cO-lcu" secondAttribute="trailing" id="TrO-FS-goe"/>
-                <constraint firstItem="aFc-cO-lcu" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="aFh-FZ-IiB"/>
+                <constraint firstItem="aFc-cO-lcu" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="aFh-FZ-IiB"/>
                 <constraint firstAttribute="bottom" secondItem="Bd1-gL-DYI" secondAttribute="bottom" constant="5" id="mYC-Nr-Dxu"/>
                 <constraint firstItem="Bd1-gL-DYI" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="p2b-dg-CNG"/>
                 <constraint firstItem="aFc-cO-lcu" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="s2G-JU-sAC"/>

@@ -68,7 +68,6 @@ class UserInfoItemVC: UIViewController {
     private func configureStackView(){
         self.stackView.axis = .horizontal
         self.stackView.distribution = .equalSpacing
-        
         self.stackView.addArrangedSubview(self.itemInfoViewOne)
         self.stackView.addArrangedSubview(self.itemInfoViewTwo)
     }

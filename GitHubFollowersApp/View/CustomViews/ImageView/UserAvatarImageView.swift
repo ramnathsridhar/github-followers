@@ -10,7 +10,7 @@ import UIKit
 class UserAvatarImageView: UIImageView {
     
     let cache = NetworkManager.sharedInstance.cache
-    let placeHoldermage = UIImage(named: "avatar-placeholder")
+    let placeHoldermage = UIImage(named: ImageConstants.placeHolderImage)
     
     override init(frame: CGRect){
         super.init(frame: frame)
@@ -18,7 +18,7 @@ class UserAvatarImageView: UIImageView {
     }
     
     required init?(coder: NSCoder){
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: coder)
     }
     
     private func configure(){

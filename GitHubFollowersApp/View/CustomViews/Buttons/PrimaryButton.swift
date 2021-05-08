@@ -17,7 +17,7 @@ class PrimaryButton: UIButton {
     
     //Required when initalising elements which might have storyboard component like button
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: coder)
     }
     
     init(backgroundColour:UIColor, title:String){
@@ -38,5 +38,4 @@ class PrimaryButton: UIButton {
         self.backgroundColor = backgroundColour
         self.setTitle(title, for: .normal)
     }
-    
 }
