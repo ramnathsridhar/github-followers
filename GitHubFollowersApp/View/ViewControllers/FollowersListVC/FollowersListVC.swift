@@ -13,7 +13,9 @@ class FollowersListVC: UIViewController {
     public var followersListVM:FollowersListViewModel?
     public var pageTitle:String?
     var filteredFollowers : [FollowerModel] = []
-    
+    var isSearching = false
+    var collectionViewDataSource: UICollectionViewDiffableDataSource<Section, FollowerModel>!
+
     enum Section{
         case main
     }
@@ -27,18 +29,72 @@ class FollowersListVC: UIViewController {
         self.followersListCollectionView.register(UINib.init(nibName: "FollowerCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: FollowerCollectionViewCell.reuseID)
 
         self.configureDiffableDataSourceForCollectionView()
-        //To load data using difafble data source
+        //To load data using diffable data source
         self.getTheFollowersForUserName()
+        
+        //Configure the search controller
+        self.configureSearchController()
+
+        self.configureDataSource()
+        
+        self.addFavButtonInNavbar()
+    }
+    
+    func configureSearchController(){
+        let searchController = UISearchController()
+        searchController.searchResultsUpdater = self
+        searchController.searchBar.placeholder = "Search Followers Here"
+        searchController.searchBar.delegate = self
+        self.navigationItem.searchController = searchController
     }
     
     func getTheFollowersForUserName(){
         self.displayLoadingView()
         self.followersListVM?.getFollowers()
     }
+    
+    func addFavButtonInNavbar(){
+        let addFavButton = UIBarButtonItem.init(barButtonSystemItem: .add, target: self, action: #selector(addFavButtonTapped))
+        self.navigationItem.rightBarButtonItem = addFavButton
+    }
+    
+    @objc func addFavButtonTapped(){
+        self.followersListVM?.addCurrentUserAsFavourite()
+    }
+}
+
+//Extension to implement the seach controller delegate methods
+extension FollowersListVC:UISearchResultsUpdating,UISearchBarDelegate{
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let filter = searchController.searchBar.text , !filter.isEmpty else { return }
+        self.isSearching = true
+        filteredFollowers = self.followersListVM?.appendedFollowersList.filter{$0.login.lowercased().contains(filter.lowercased())} ?? []
+        self.updateData(with: self.filteredFollowers)
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        self.updateData(with: self.followersListVM?.appendedFollowersList ?? [])
+        self.isSearching = false
+    }
+    
+    func updateData(with followers:[FollowerModel]){
+        var snapshot = NSDiffableDataSourceSnapshot<Section,FollowerModel>()
+        snapshot.appendSections([.main])
+        snapshot.appendItems(followers)
+        collectionViewDataSource.apply(snapshot, animatingDifferences: true, completion: nil)
+    }
 }
 
 //Extension to implement the view model delegate methods
 extension FollowersListVC:FollowersFlowDelegate{
+    func addFavouriteSuccessul() {
+        self.displayAlertPopup(alertTitle: AppMessages.successString, alertMessage: AppMessages.addFavouriteSuccessful, buttonTitle: AppMessages.okString)
+    }
+    
+    func addFavouriteFailed(errorMessage: String) {
+        self.displayAlertPopup(alertTitle: ErrorMessages.errorString.rawValue, alertMessage: errorMessage, buttonTitle: AppMessages.okString)
+    }
+    
     func getFollowersSuccessful(followersList: [FollowerModel]) {
         self.dismissLoadingView()
         DispatchQueue.main.async {
@@ -55,6 +111,16 @@ extension FollowersListVC:FollowersFlowDelegate{
 
 //Extension to set up the collection view items , cell and size of cells
 extension FollowersListVC:UICollectionViewDelegate,UICollectionViewDelegateFlowLayout{
+    
+    func configureDataSource(){
+        self.collectionViewDataSource = UICollectionViewDiffableDataSource.init(collectionView: self.followersListCollectionView, cellProvider: { (collectionView, indexPath, follower) -> UICollectionViewCell? in
+            let cell = self.followersListCollectionView.dequeueReusableCell(withReuseIdentifier: FollowerCollectionViewCell.reuseID, for: indexPath) as? FollowerCollectionViewCell
+            cell?.setFollowerDetails(follower: follower)
+            return cell
+        })
+    }
+    
+    
     //Configuration of the diffable data source for the collection view
     func configureDiffableDataSourceForCollectionView(){
         collectionViewDiffableDataSource = UICollectionViewDiffableDataSource.init(collectionView: self.followersListCollectionView, cellProvider: { (collectionView, indexpath, follower) -> UICollectionViewCell? in
@@ -63,15 +129,7 @@ extension FollowersListVC:UICollectionViewDelegate,UICollectionViewDelegateFlowL
             return cell
         })
     }
-    
-    //Updating the collection view to display updated followers list
-    func updateData(with followers:[FollowerModel]){
-        var snapshot = NSDiffableDataSourceSnapshot<Section,FollowerModel>()
-        snapshot.appendSections([.main])
-        snapshot.appendItems(followers)
-        collectionViewDiffableDataSource.apply(snapshot, animatingDifferences: true, completion: nil)
-    }
-    
+        
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let widthOfCells:CGFloat = (self.followersListCollectionView.bounds.width-50)/3
         let heightOfCells:CGFloat = 120

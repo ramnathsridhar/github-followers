@@ -16,7 +16,7 @@ enum ErrorMessages : String , Error {
     case alreadyInFavourite = "Username already added as favourite"
     case enterValidUsername = "Please enter a valid username"
     case errorString = "Error"
-    case unableToFetchFavourtie = "Error trying to fetch favourite . Please try again ."
+    case unableToFetchFavourite = "Error trying to fetch favourite . Please try again ."
     case noFavAdded = "No Favourites Added"
     case userHasNoMoreFollowers = "User has no more followers"
 }
