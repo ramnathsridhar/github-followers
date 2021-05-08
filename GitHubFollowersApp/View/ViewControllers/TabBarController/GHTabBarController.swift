@@ -27,6 +27,7 @@ class GHTabBarController : UITabBarController{
      //Creating the favourites VC to add it in the tab bar
      func createFavouritesNavigationController() -> UINavigationController{
          let favouritesVC = FavouritesVC()
+        favouritesVC.favouritesViewModel = FavouritesViewModel.init(favouritesDelegate: favouritesVC)
          favouritesVC.title = AppMessages.favourites
          //Setting the icon in the tab bar to the default favourite icon
          favouritesVC.tabBarItem = UITabBarItem.init(tabBarSystemItem: .favorites, tag: 1)

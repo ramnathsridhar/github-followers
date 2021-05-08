@@ -10,6 +10,8 @@ import Foundation
 public protocol FollowersFlowDelegate:AnyObject{
     func getFollowersSuccessful(followersList:[FollowerModel])
     func getFollowersFailed(errorMessage:String)
+    func addFavouriteSuccessul()
+    func addFavouriteFailed(errorMessage:String)
 }
 
 public class FollowersListViewModel {
@@ -37,7 +39,6 @@ public class FollowersListViewModel {
             self.followersDelegate?.getFollowersFailed(errorMessage: ErrorMessages.userHasNoMoreFollowers.rawValue)
             return
         }
-        
         //API call to get the followers for the username
         NetworkManager.sharedInstance.getFollowers(for: self.userName, in: self.pageNumber) { (result) in
             switch result{
@@ -51,6 +52,30 @@ public class FollowersListViewModel {
             }
         }
     }
+    
+    func addCurrentUserAsFavourite(){
+        NetworkManager.sharedInstance.getUserInfo(for: userName) { [weak self] result in
+            guard let self = self else { return }
+            
+            switch result {
+            case .success(let user):
+                let favorite = FollowerModel.init(login: user.login, avatar_url: user.avatar_url)
+                
+                PersistenceManager.updateWith(follower: favorite, actionType: .add) { [weak self] error in
+                    guard let self = self else { return }
+                    
+                    guard let error = error else {
+                        self.followersDelegate?.addFavouriteSuccessul()
+                        return
+                    }
+                    self.followersDelegate?.addFavouriteFailed(errorMessage: error.rawValue)
+                }
+            case .failure(let error):
+                self.followersDelegate?.addFavouriteFailed(errorMessage: error.rawValue)
+            }
+        }
+    }
+    
     
     //Append the list of followers recevid after updating the pagination value
     func getTheAppendedListOfFollowers(newListOfFollowers:[FollowerModel]) -> [FollowerModel]{

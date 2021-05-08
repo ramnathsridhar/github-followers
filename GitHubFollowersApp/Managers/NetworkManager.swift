@@ -55,4 +55,42 @@ public class NetworkManager {
         //Following is always called when making using an URLSession to start the API request
         task.resume()
     }
+    
+    //API call to get the userinfo when a username is passed
+    func getUserInfo(for userName: String, completed: @escaping (Result<UserModel,ErrorMessages>) -> Void){
+        let endpoint = baseURL + "\(userName)"
+                
+        guard let url = URL(string: endpoint) else {
+            completed(.failure(.invalidUsername))
+            return
+        }
+        
+        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            //If let has to be used for checking if error is nil
+            if let _ = error {
+                completed(.failure(.unableToCompleteRequest))
+                return
+            }
+            
+            guard let response = response as? HTTPURLResponse , response.statusCode == 200 else{
+                completed(.failure(.invalidResponse))
+                return
+            }
+            
+            guard let data = data else{
+                completed(.failure(.invalidData))
+                return
+            }
+            
+            do{
+                let decoder = JSONDecoder.init()
+                let user = try decoder.decode(UserModel.self, from: data)
+                completed(.success(user))
+            }catch{
+                completed(.failure(.invalidData))
+            }
+        }
+        task.resume()
+    }
+    
 }
