@@ -13,4 +13,15 @@ struct AppMessages{
     static let successString = "Success"
     static let searchUsername = "Search Username"
     static let favourites = "Favourites"
+    static let noLocation = "No Location"
+    static let noBioAvailable = "No Bio Available"
+    static let getFollowers = "Get Followers"
+    static let gitProfile = "Git Profile"
+    static let searchFollowers = "Search Followers"
+    static let gitHubUserSince = "Github User Since"
+    static let publicRepos = "Public Repos"
+    static let followersString = "Followers"
+    static let followingString = "Following"
+    static let publicGists = "Public Gists"
+
 }

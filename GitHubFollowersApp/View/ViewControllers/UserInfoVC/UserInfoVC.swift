@@ -47,15 +47,15 @@ class UserInfoVC: UIViewController {
         self.add(childVC: UserInfoHeaderVC.init(user: userInfo), to: self.headerView)
 
         
-                           let repoItemVC = UserRepoItemVC.init(user: userInfo)
+        let repoItemVC = UserRepoItemVC.init(user: userInfo)
                            repoItemVC.delegate = self
                            self.add(childVC: repoItemVC, to: self.itemViewOne)
         
-                        let followerItemVC = UserFollowerItemVC.init(user: userInfo)
+        let followerItemVC = UserFollowerItemVC.init(user: userInfo)
                                  followerItemVC.delegate = self
                                    self.add(childVC: followerItemVC, to: self.itemViewTwo)
         
-                           self.dateLabel.text = "GitHub since : \(userInfo.created_at.convertToDisplayFormat())"
+        self.dateLabel.text = AppMessages.gitHubUserSince + String.space + String.colon + userInfo.created_at.convertToDisplayFormat()
     }
     
     func layoutUI(){
@@ -100,7 +100,6 @@ class UserInfoVC: UIViewController {
     }
 }
 
-
 extension UserInfoVC:GetUserInfoFlowDelegate{
     func getUserInfoSuccessful(userInfo: UserModel) {
         self.dismissLoadingView()
@@ -125,13 +124,10 @@ extension UserInfoVC:UserInfoVCActionDelegate{
     }
     
     func didTapGetFollowers(for user: UserModel) {
-        
         guard user.followers != 0 else {
             self.displayAlertPopup(alertTitle: ErrorMessages.errorString.rawValue, alertMessage: ErrorMessages.userHasNoFollowers.rawValue, buttonTitle: AppMessages.okString)
-
             return
         }
-        
         self.delegate.didRequestFollowers(for: user.login)
         self.dismissUserInfoVC()
         return

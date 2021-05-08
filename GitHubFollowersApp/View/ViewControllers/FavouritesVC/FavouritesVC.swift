@@ -10,7 +10,7 @@ import UIKit
 class FavouritesVC: UIViewController {
 
     @IBOutlet weak var favouritesListTableView: UITableView!
-    @IBOutlet weak var noFavouritesAddedLabel: UILabel!
+    @IBOutlet weak var noFavouritesAddedLabel: TitleLabel!
     
     var favouritesViewModel : FavouritesViewModel?
 

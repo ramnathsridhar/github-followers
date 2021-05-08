@@ -15,10 +15,8 @@ class UserInfoHeaderVC: UIViewController {
     let locationImageView = UIImageView()
     let locationLabel = SecondaryTitleLabel.init(sizeOfFont: 18)
     let bioLabel = BodyLabel.init(textAlignment: .left)
-
     
     var user:UserModel!
-    
     init(user:UserModel) {
         super.init(nibName:nil,bundle:nil)
         self.user = user
@@ -27,7 +25,6 @@ class UserInfoHeaderVC: UIViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,12 +36,12 @@ class UserInfoHeaderVC: UIViewController {
     func configureUIElements(){
         self.avatarImageView.downloadImage(from: user.avatar_url)
         self.userNameLabel.text = user.login
-        self.nameLabel.text = user.name ?? ""
-        self.locationLabel.text = user.location ?? "No Location"
-        self.bioLabel.text = user.bio ?? "No bio available"
+        self.nameLabel.text = user.name ?? String.empty
+        self.locationLabel.text = user.location ?? AppMessages.noLocation
+        self.bioLabel.text = user.bio ?? AppMessages.noBioAvailable
         self.bioLabel.numberOfLines = 3
         
-        self.locationImageView.image = UIImage(systemName: AppSymbols.location)
+        self.locationImageView.image = UIImage(systemName: ImageConstants.location)
         self.locationImageView.tintColor = .secondaryLabel
     }
     

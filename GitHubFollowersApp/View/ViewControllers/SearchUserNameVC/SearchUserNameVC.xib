@@ -21,7 +21,7 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zih-c4-sYP">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_image_view" translatesAutoresizingMaskIntoConstraints="NO" id="zih-c4-sYP">
                     <rect key="frame" x="107" y="203" width="200" height="200"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="200" id="Qrd-7z-gR8"/>
@@ -33,14 +33,15 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="QvH-V9-GqW"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ebR-2v-ura">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ebR-2v-ura" customClass="PrimaryButton" customModule="GitHubFollowersApp" customModuleProvider="target">
                     <rect key="frame" x="20" y="493" width="374" height="50"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="Pay-Jg-rJc"/>
                     </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <state key="normal" title="Search Username"/>
                     <connections>
                         <action selector="searchButtonClicked:" destination="-1" eventType="touchUpInside" id="Z0L-xc-HqD"/>
@@ -63,6 +64,7 @@
         </view>
     </objects>
     <resources>
+        <image name="logo_image_view" width="512" height="512"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

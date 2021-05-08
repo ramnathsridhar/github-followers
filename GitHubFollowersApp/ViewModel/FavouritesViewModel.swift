@@ -48,7 +48,7 @@ class FavouritesViewModel{
         
         PersistenceManager.updateWith(follower: selectedFavourite, actionType: .remove) { [weak self] (error) in
             if let errorMessage = error {
-                self?.favouritesDelegate?.deleteFavouriteFailed(errorMessage: (errorMessage as? ErrorMessages)?.rawValue ?? String.empty)
+                self?.favouritesDelegate?.deleteFavouriteFailed(errorMessage: errorMessage.rawValue)
                 return
             }else{
                 if self?.favouriteList.isEmpty ?? true{
