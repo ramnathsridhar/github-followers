@@ -52,4 +52,11 @@ extension UIViewController{
             containerView = nil
         }
     }
+    
+    //Open Safari to display the URL
+    func presentSafariVC(with url: URL){
+        let safariVC = SFSafariViewController.init(url: url)
+        safariVC.preferredControlTintColor = .systemGreen
+        self.present(safariVC, animated: true)
+    }
 }

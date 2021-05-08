@@ -19,4 +19,6 @@ enum ErrorMessages : String , Error {
     case unableToFetchFavourite = "Error trying to fetch favourite . Please try again ."
     case noFavAdded = "No Favourites Added"
     case userHasNoMoreFollowers = "User has no more followers"
+    case userProfileURLInvalid = "User profile URL invalid"
+    case userHasNoFollowers = "User does not have any followers"
 }

@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol FollowerListVCDelegate : class {
+    func didRequestFollowers(for userName:String)
+}
+
 class FollowersListVC: UIViewController {
     @IBOutlet weak var followersListCollectionView: UICollectionView!
     
@@ -165,5 +169,31 @@ extension FollowersListVC:UICollectionViewDelegate,UICollectionViewDelegateFlowL
             self.followersListVM?.getFollowers()
         }
         
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let activeArray = isSearching ? self.filteredFollowers : self.followersListVM?.appendedFollowersList
+        let follower = activeArray?[indexPath.row]
+        
+        let destinationVC = UserInfoVC.init()
+        destinationVC.delegate = self
+        destinationVC.getUserInfoVM = GetUserInfoViewModel.init(userInfoDelegate: destinationVC, userName: follower?.login ?? String.empty)
+        destinationVC.userName = follower?.login ?? String.empty
+        let navController = UINavigationController.init(rootViewController: destinationVC)
+        self.present(navController, animated: true, completion: nil)
+    }
+}
+
+
+extension FollowersListVC:FollowerListVCDelegate{
+    func didRequestFollowers(for userName: String) {
+        //Get followers
+        self.followersListVM?.userName = userName
+        self.followersListVM?.pageNumber = 1
+        self.title = userName
+        self.followersListVM?.appendedFollowersList.removeAll()
+        self.followersListCollectionView.setContentOffset(.zero, animated: true)
+        self.displayLoadingView()
+        self.followersListVM?.getFollowers()
     }
 }

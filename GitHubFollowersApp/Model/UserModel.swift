@@ -6,7 +6,7 @@
 //
 
 import Foundation
-struct UserModel:Codable {
+public struct UserModel:Codable {
     var login: String
     var avatar_url: String
     var name: String?
