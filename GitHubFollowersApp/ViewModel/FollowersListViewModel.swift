@@ -16,7 +16,7 @@ public protocol FollowersFlowDelegate:AnyObject{
 
 public class FollowersListViewModel {
     
-    public var followersList : [FollowerModel]
+   // public var followersList : [FollowerModel]
     public var pageNumber:Int
     public var followersDelegate:FollowersFlowDelegate?
     public var userName:String
@@ -27,8 +27,8 @@ public class FollowersListViewModel {
     //The delegate which will perform action based on viewmodel delegates will be passed
     init(delegate:FollowersFlowDelegate,userName:String) {
         self.followersDelegate = delegate
-        self.followersList = []
-        self.appendedFollowersList = self.followersList
+      //  self.followersList = []
+        self.appendedFollowersList = []//self.followersList
         self.pageNumber = 1
         self.userName = userName
     }
