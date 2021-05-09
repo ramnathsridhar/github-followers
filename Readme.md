@@ -1,6 +1,6 @@
 Readme for the Github followers app
 
-Project description : iOS GitHubFollowers app built using GitHub APIs to display the followers of a user and to get the user information of a particular user . 
+Project description : iOS GitHubFollowers app built using GitHub APIs to display the followers of a user and to get the user information of a particular user . This app is built using Swift language and MVVM architecture . The UI components are built both as programmatic componenents as well as using XIBs . Sample Unit tests and UI tests have been added . 
 
 Technical information :
 1. Development Language Used : Swift 5
@@ -11,6 +11,25 @@ Technical information :
 6. Supported Devices : iPhone , iPad
 7. Third Party Software : GitHub API
 8. Github URL : https://github.com/ramnathsridhar/weather-app.git
+
+iOS Development Technologies and Concepts used :
+1.   MVVM Architecture
+2.   Depenedency Injection
+3.   Delegate Protocol Communication Patterns
+4.   Network calls using URLSession
+5.   Animations
+6.   Pagination
+7.   CollectionView Diffable Data Source
+8.   UIKit
+9.   Autolayout
+10. Programatic Autolayout Constraints
+11. SearchController
+12. Persistence using UserDefaults
+13. Singleton design pattern
+15. Extensions
+16. Resuable Views
+17. Image Caching
+18. Unit tests using  XCTest and UI tests using XCUITest
 
 Steps to run project :
 1. Download proejct from github URL
@@ -32,25 +51,6 @@ App Usage :
 12. The list of favourite users is listed in this page , if previously added
 13. If user wishes to delete a favourtie user , the user needs to be selected and swiped to the right , to display the delete option . On clicking of delete the favourite user is removed from the list
 
-
-iOS Development Technologies and Concepts used :
-1.   MVVM Architecture
-2.   Depenedency Injection
-3.   Delegate Protocol Communication Patterns
-4.   Network calls using URLSession
-5.   Animations
-6.   Pagination
-7.   CollectionView Diffable Data Source
-8.   UIKit
-9.   Autolayout
-10. Programatic Autolayout Constraints
-11. SearchController
-12. Persistance using UserDefaults
-13. Singleton design pattern
-15. Extensions
-16. Resuable Views
-17. Image Caching
-
 Project Structure :
 1. Extensions : Contains the extensions of String , UIViewController , UIImageView , Date
 2. Utilties : Contains constants used in app
@@ -58,7 +58,8 @@ Project Structure :
 4. ViewModel : Contains the view model of the corresponding view controllers
 5. Model : Contains the structures of the response json
 6. View : Contains the view controller and the custom views which have been used in the app
-
+7. GitHubFollowersAppTests : Contains sample Unit tests
+8. GitHubFollowersAppUITests : Contains sample UI tests
 
 Scope of Improvement :
-
+1. Additional Unit and UI tests to be written to cover all cases

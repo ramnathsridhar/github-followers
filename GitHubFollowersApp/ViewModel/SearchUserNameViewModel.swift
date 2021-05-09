@@ -18,7 +18,7 @@ class SearchUserNameViewModel{
     public var enteredUsername:String
     
     //The delegate which will perform action based on the delegate
-    init(delegate:SearchUserNameFlowDelegate) {
+    init(delegate:SearchUserNameFlowDelegate?) {
         self.userNameDelegate = delegate
         self.enteredUsername = String.empty
     }
