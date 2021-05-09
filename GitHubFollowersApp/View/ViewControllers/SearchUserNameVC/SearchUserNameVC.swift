@@ -35,6 +35,29 @@ class SearchUserNameVC: UIViewController {
         self.searchButton.setTitleColor(.white, for: .normal)
         self.logoImageView.layer.cornerRadius = 10
         self.userNameTextField.returnKeyType = .search
+        self.userNameTextField.layer.borderColor = UIColor.black.cgColor
+        self.userNameTextField.layer.cornerRadius = 10
+        self.userNameTextField.layer.borderWidth = 1
+        self.userNameTextField.autocorrectionType = .no
+        //Animation
+        self.animateUI()
+    }
+    
+    func animateUI(){
+        //Setting the alpha of the textfield and submit button to 0
+        //To give the effect that the logo present in launch screen is moving up
+        self.userNameTextField.alpha = 0
+        self.searchButton.alpha = 0
+        //The animations take place over a duration of 1.5 seconds
+        UIView.animate(withDuration: 1.5) {
+            //The username textfield and search button become visible
+            self.userNameTextField.alpha = 1
+            self.searchButton.alpha = 1
+            //The elements on screen move up by 50
+            self.logoImageView.frame.origin.y -= 50
+            self.userNameTextField.frame.origin.y -= 50
+            self.searchButton.frame.origin.y -= 50
+        }
     }
     
     //Function to dismiss keyboard

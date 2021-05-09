@@ -33,12 +33,7 @@ class GitHubFollowersAppUITests: BaseUITest {
         if firstElementOfFollowersCollectionVIew.exists {
             firstElementOfFollowersCollectionVIew.tap()
         }
+        waitToExecuteNextLine(timeOut: 5)
         XCTAssert(app/*@START_MENU_TOKEN@*/.staticTexts["Git Profile"]/*[[".buttons[\"Git Profile\"].staticTexts[\"Git Profile\"]",".staticTexts[\"Git Profile\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.exists)
-    }
-    
-    func testOpenFavouritesVCWithNoFavourites(){
-        let app = XCUIApplication()
-        app.tabBars["Tab Bar"]/*@START_MENU_TOKEN@*/.buttons["favouriteTabBarButton"]/*[[".buttons[\"Favorites\"]",".buttons[\"favouriteTabBarButton\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
-        XCTAssert(app.staticTexts["No Favourites Added"].exists)
     }
 }

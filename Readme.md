@@ -14,7 +14,7 @@ Technical information :
 
 iOS Development Technologies and Concepts used :
 1.   MVVM Architecture
-2.   Depenedency Injection
+2.   Dependency Injection
 3.   Delegate Protocol Communication Patterns
 4.   Network calls using URLSession
 5.   Animations
@@ -30,6 +30,7 @@ iOS Development Technologies and Concepts used :
 16. Resuable Views
 17. Image Caching
 18. Unit tests using  XCTest and UI tests using XCUITest
+19. Swift
 
 Steps to run project :
 1. Download proejct from github URL

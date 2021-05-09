@@ -32,7 +32,7 @@ class GHTabBarController : UITabBarController{
         favouritesVC.favouritesViewModel = FavouritesViewModel.init(favouritesDelegate: favouritesVC)
          favouritesVC.title = AppMessages.favourites
          //Setting the icon in the tab bar to the default favourite icon
-         favouritesVC.tabBarItem = UITabBarItem.init(tabBarSystemItem: .favorites, tag: 1)
+        favouritesVC.tabBarItem = UITabBarItem.init(title: AppMessages.favourites, image: UIImage(systemName: ImageConstants.favouriteImage), selectedImage: nil)
          favouritesVC.tabBarItem.accessibilityIdentifier = AccessibilityIdentifers.favouriteTabBarButton
          return UINavigationController(rootViewController: favouritesVC)
      }
