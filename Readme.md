@@ -49,6 +49,7 @@ iOS Development Technologies and Concepts used :
 13. Singleton design pattern
 15. Extensions
 16. Resuable Views
+17. Image Caching
 
 Project Structure :
 1. Extensions : Contains the extensions of String , UIViewController , UIImageView , Date
