@@ -13,4 +13,5 @@ enum ImageConstants {
     static let followers    = "heart"
     static let following    = "person.2"
     static let placeHolderImage = "avatar-placeholder"
+    static let favouriteImage = "star.fill"
 }

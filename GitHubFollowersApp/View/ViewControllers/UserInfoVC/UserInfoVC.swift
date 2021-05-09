@@ -110,7 +110,9 @@ extension UserInfoVC:GetUserInfoFlowDelegate{
     
     func getUserInfoFailed(errorMessage: String) {
         self.dismissLoadingView()
-        self.displayAlertPopup(alertTitle: ErrorMessages.errorString.rawValue, alertMessage: errorMessage, buttonTitle: AppMessages.okString)
+        self.displayAlertPopup(alertTitle: ErrorMessages.errorString.rawValue, alertMessage: errorMessage, buttonTitle: AppMessages.okString){ (action) in
+            self.dismiss(animated: true, completion: nil)
+        }
     }
 }
 

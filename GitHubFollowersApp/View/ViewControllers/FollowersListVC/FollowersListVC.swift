@@ -28,6 +28,7 @@ class FollowersListVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.displayLoadingView()
 
         self.followersListCollectionView.delegate = self
         self.followersListCollectionView.register(UINib.init(nibName: "FollowerCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: FollowerCollectionViewCell.reuseID)
@@ -58,7 +59,6 @@ class FollowersListVC: UIViewController {
     }
     
     func getTheFollowersForUserName(){
-        self.displayLoadingView()
         self.followersListVM?.getFollowers()
     }
     
@@ -116,9 +116,9 @@ extension FollowersListVC:FollowersFlowDelegate{
     }
     
     func getFollowersFailed(errorMessage: String) {
-        self.dismissLoadingView()
         self.displayAlertPopup(alertTitle: ErrorMessages.errorString.rawValue, alertMessage: errorMessage, buttonTitle: AppMessages.okString){ (action) in
             self.navigationController?.popViewController(animated: true)
+            self.dismissLoadingView()
         }
     }
 }

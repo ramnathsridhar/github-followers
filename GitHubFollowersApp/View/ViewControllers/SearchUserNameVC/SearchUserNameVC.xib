@@ -22,14 +22,14 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_image_view" translatesAutoresizingMaskIntoConstraints="NO" id="zih-c4-sYP">
-                    <rect key="frame" x="107" y="203" width="200" height="200"/>
+                    <rect key="frame" x="107" y="253" width="200" height="200"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="200" id="Qrd-7z-gR8"/>
                         <constraint firstAttribute="height" constant="200" id="plf-TR-BlB"/>
                     </constraints>
                 </imageView>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter username here" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w8y-gc-rFJ">
-                    <rect key="frame" x="20" y="423" width="374" height="50"/>
+                    <rect key="frame" x="20" y="473" width="374" height="50"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="QvH-V9-GqW"/>
                     </constraints>
@@ -37,7 +37,7 @@
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ebR-2v-ura" customClass="PrimaryButton" customModule="GitHubFollowersApp" customModuleProvider="target">
-                    <rect key="frame" x="20" y="493" width="374" height="50"/>
+                    <rect key="frame" x="20" y="543" width="374" height="50"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="Pay-Jg-rJc"/>
                     </constraints>
@@ -52,7 +52,7 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="w8y-gc-rFJ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="1Zv-1h-VaM"/>
-                <constraint firstItem="w8y-gc-rFJ" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="JSm-sR-aXm"/>
+                <constraint firstItem="w8y-gc-rFJ" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="50" id="JSm-sR-aXm"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ebR-2v-ura" secondAttribute="trailing" constant="20" id="KDD-S4-oQ0"/>
                 <constraint firstItem="ebR-2v-ura" firstAttribute="top" secondItem="w8y-gc-rFJ" secondAttribute="bottom" constant="20" id="Ycl-3l-xid"/>
                 <constraint firstItem="w8y-gc-rFJ" firstAttribute="top" secondItem="zih-c4-sYP" secondAttribute="bottom" constant="20" id="ZR3-vZ-J2H"/>
