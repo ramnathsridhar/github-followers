@@ -64,6 +64,7 @@ class FollowersListVC: UIViewController {
     }
     
     @objc func addFavButtonTapped(){
+        self.displayLoadingView()
         self.followersListVM?.addCurrentUserAsFavourite()
     }
 }
@@ -71,16 +72,13 @@ class FollowersListVC: UIViewController {
 //Extension to implement the seach controller delegate methods
 extension FollowersListVC:UISearchResultsUpdating{
     func updateSearchResults(for searchController: UISearchController) {
-        
         guard let filter = searchController.searchBar.text, !filter.isEmpty else {
             filteredFollowers.removeAll()
             updateData(with: self.followersListVM?.appendedFollowersList ?? [])
             isSearching = false
             return
         }
-        
         isSearching = true
-        
         filteredFollowers  = self.followersListVM?.getFilteredFollowersList(filter: filter) ?? []
         updateData(with: self.filteredFollowers)
     }
@@ -96,10 +94,12 @@ extension FollowersListVC:UISearchResultsUpdating{
 //Extension to implement the view model delegate methods
 extension FollowersListVC:FollowersFlowDelegate{
     func addFavouriteSuccessul() {
+        self.dismissLoadingView()
         self.displayAlertPopup(alertTitle: AppMessages.successString, alertMessage: AppMessages.addFavouriteSuccessful, buttonTitle: AppMessages.okString)
     }
     
     func addFavouriteFailed(errorMessage: String) {
+        self.dismissLoadingView()
         self.displayAlertPopup(alertTitle: ErrorMessages.errorString.rawValue, alertMessage: errorMessage, buttonTitle: AppMessages.okString)
     }
     

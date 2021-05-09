@@ -20,14 +20,12 @@ class FavouritesVC: UIViewController {
         self.favouritesListTableView.dataSource = self
         self.favouritesListTableView.register(UINib.init(nibName: "FavouriteTableViewCell", bundle: nil), forCellReuseIdentifier: FavouriteTableViewCell.reuseID)
         self.favouritesListTableView.tableFooterView = UIView()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.favouritesViewModel?.getFavourites()
     }
 }
-
 
 extension FavouritesVC:UITableViewDelegate , UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
