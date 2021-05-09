@@ -1,6 +1,6 @@
 Readme for the Github followers app
 
-Project description : iOS GitHubFollowers app built using GitHub APIs to display the followers of a user and to get the user information of a particular user . This app is built using Swift language and MVVM architecture . The UI components are built both as programmatic componenents as well as using XIBs . Sample Unit tests and UI tests have been added . 
+Project description : iOS GitHubFollowers app built using GitHub APIs to display the followers of a user and to get the user information of a particular user . This app is built using Swift language and MVVM architecture . The UI components are built both as programmatic componenents as well as using XIBs . Sample Unit tests and UI tests have been added . No third party libraries have been used . 
 
 Technical information :
 1. Development Language Used : Swift 5
@@ -10,7 +10,7 @@ Technical information :
 5. XcodeVersion : 12.4
 6. Supported Devices : iPhone , iPad
 7. Third Party Software : GitHub API
-8. Github URL : https://github.com/ramnathsridhar/weather-app.git
+8. Github URL : https://github.com/ramnathsridhar/github-followers.git
 
 iOS Development Technologies and Concepts used :
 1.   MVVM Architecture
