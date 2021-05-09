@@ -25,10 +25,9 @@ public class FollowersListViewModel {
     public var appendedFollowersList: [FollowerModel]
     
     //The delegate which will perform action based on viewmodel delegates will be passed
-    init(delegate:FollowersFlowDelegate,userName:String) {
+    init(delegate:FollowersFlowDelegate?,userName:String) {
         self.followersDelegate = delegate
-      //  self.followersList = []
-        self.appendedFollowersList = []//self.followersList
+        self.appendedFollowersList = []
         self.pageNumber = 1
         self.userName = userName
     }

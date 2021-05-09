@@ -6,9 +6,12 @@
 //
 
 import Foundation
-struct AccessibilityIdentifers{
+public struct AccessibilityIdentifers{
     static let userNameTextField = "userNameTextField"
     static let searchButton = "searchButton"
     static let searchTabBarButton = "searchTabBarButton"
     static let favouriteTabBarButton = "favouriteTabBarButton"
+    static let addFavouriteButton = "addFavourtieButton"
+    static let favouritesTableView = "favouritesTableView"
+    static let followersCollectionView = "followersCollectionView"
 }

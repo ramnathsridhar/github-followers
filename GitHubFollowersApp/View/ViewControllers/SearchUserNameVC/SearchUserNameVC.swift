@@ -20,6 +20,12 @@ class SearchUserNameVC: UIViewController {
         self.userNameTextField.delegate = self
         self.setupUI()
         self.dismissKeybordFunction()
+        self.setAccessibilityIdentifiers()
+    }
+    
+    func setAccessibilityIdentifiers(){
+        self.userNameTextField.accessibilityIdentifier = AccessibilityIdentifers.userNameTextField
+        self.searchButton.accessibilityIdentifier = AccessibilityIdentifers.searchButton
     }
 
     //Code to modify UI properties to elements on screen

@@ -44,6 +44,10 @@ class FollowersListVC: UIViewController {
         self.addFavButtonInNavbar()
     }
     
+    func setAccessibilityIdentifiers(){
+        self.followersListCollectionView.accessibilityIdentifier = AccessibilityIdentifers.followersCollectionView
+    }
+    
     func configureSearchController(){
         let searchController = UISearchController()
         searchController.searchResultsUpdater = self
@@ -60,7 +64,9 @@ class FollowersListVC: UIViewController {
     
     func addFavButtonInNavbar(){
         let addFavButton = UIBarButtonItem.init(barButtonSystemItem: .add, target: self, action: #selector(addFavButtonTapped))
+        addFavButton.accessibilityIdentifier = AccessibilityIdentifers.addFavouriteButton
         self.navigationItem.rightBarButtonItem = addFavButton
+        
     }
     
     @objc func addFavButtonTapped(){
