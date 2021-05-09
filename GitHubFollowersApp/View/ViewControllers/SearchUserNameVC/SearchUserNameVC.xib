@@ -33,7 +33,7 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="QvH-V9-GqW"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ebR-2v-ura" customClass="PrimaryButton" customModule="GitHubFollowersApp" customModuleProvider="target">
@@ -41,7 +41,7 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="Pay-Jg-rJc"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                     <state key="normal" title="Search Username"/>
                     <connections>
                         <action selector="searchButtonClicked:" destination="-1" eventType="touchUpInside" id="Z0L-xc-HqD"/>

@@ -46,7 +46,12 @@ public class FollowersListViewModel {
                     if followersListFromResponse.isEmpty{
                         self.hasMoreFollowers = false
                     }
-                    self.followersDelegate?.getFollowersSuccessful(followersList: self.getTheAppendedListOfFollowers(newListOfFollowers: followersListFromResponse))
+                    self.getTheAppendedListOfFollowers(newListOfFollowers: followersListFromResponse)
+                    if self.appendedFollowersList.isEmpty{
+                        self.followersDelegate?.getFollowersFailed(errorMessage: ErrorMessages.userHasNoFollowers.rawValue)
+                    }else{
+                        self.followersDelegate?.getFollowersSuccessful(followersList: self.appendedFollowersList)
+                    }
                 case .failure(let errorMessage):
                     self.followersDelegate?.getFollowersFailed(errorMessage: errorMessage.rawValue)
             }
@@ -78,8 +83,12 @@ public class FollowersListViewModel {
     
     
     //Append the list of followers recevid after updating the pagination value
-    func getTheAppendedListOfFollowers(newListOfFollowers:[FollowerModel]) -> [FollowerModel]{
+    func getTheAppendedListOfFollowers(newListOfFollowers:[FollowerModel]){
         self.appendedFollowersList.append(contentsOf: newListOfFollowers)
-        return appendedFollowersList
+    }
+    
+    func getFilteredFollowersList(filter:String) -> [FollowerModel] {
+        let filteredFollowers = self.appendedFollowersList.filter { $0.login.lowercased().contains(filter.lowercased()) }
+        return filteredFollowers
     }
 }

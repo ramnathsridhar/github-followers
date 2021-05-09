@@ -17,6 +17,7 @@ class SearchUserNameVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.userNameTextField.delegate = self
         self.setupUI()
         self.dismissKeybordFunction()
     }

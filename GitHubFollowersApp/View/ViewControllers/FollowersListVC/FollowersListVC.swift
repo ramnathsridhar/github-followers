@@ -48,8 +48,9 @@ class FollowersListVC: UIViewController {
         let searchController = UISearchController()
         searchController.searchResultsUpdater = self
         searchController.searchBar.placeholder = AppMessages.searchFollowers
-        searchController.searchBar.delegate = self
         self.navigationItem.searchController = searchController
+        searchController.obscuresBackgroundDuringPresentation   = false
+        self.navigationItem.hidesSearchBarWhenScrolling = false
     }
     
     func getTheFollowersForUserName(){
@@ -68,19 +69,22 @@ class FollowersListVC: UIViewController {
 }
 
 //Extension to implement the seach controller delegate methods
-extension FollowersListVC:UISearchResultsUpdating,UISearchBarDelegate{
+extension FollowersListVC:UISearchResultsUpdating{
     func updateSearchResults(for searchController: UISearchController) {
-        guard let filter = searchController.searchBar.text , !filter.isEmpty else { return }
-        self.isSearching = true
-        filteredFollowers = self.followersListVM?.appendedFollowersList.filter{$0.login.lowercased().contains(filter.lowercased())} ?? []
-        self.updateData(with: self.filteredFollowers)
+        
+        guard let filter = searchController.searchBar.text, !filter.isEmpty else {
+            filteredFollowers.removeAll()
+            updateData(with: self.followersListVM?.appendedFollowersList ?? [])
+            isSearching = false
+            return
+        }
+        
+        isSearching = true
+        
+        filteredFollowers  = self.followersListVM?.getFilteredFollowersList(filter: filter) ?? []
+        updateData(with: self.filteredFollowers)
     }
-    
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        self.updateData(with: self.followersListVM?.appendedFollowersList ?? [])
-        self.isSearching = false
-    }
-    
+        
     func updateData(with followers:[FollowerModel]){
         var snapshot = NSDiffableDataSourceSnapshot<Section,FollowerModel>()
         snapshot.appendSections([.main])
@@ -108,7 +112,9 @@ extension FollowersListVC:FollowersFlowDelegate{
     
     func getFollowersFailed(errorMessage: String) {
         self.dismissLoadingView()
-        self.displayAlertPopup(alertTitle: ErrorMessages.errorString.rawValue, alertMessage: errorMessage, buttonTitle: AppMessages.okString)
+        self.displayAlertPopup(alertTitle: ErrorMessages.errorString.rawValue, alertMessage: errorMessage, buttonTitle: AppMessages.okString){ (action) in
+            self.navigationController?.popViewController(animated: true)
+        }
     }
 }
 

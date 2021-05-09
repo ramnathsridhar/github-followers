@@ -55,7 +55,7 @@ class UserInfoVC: UIViewController {
                                  followerItemVC.delegate = self
                                    self.add(childVC: followerItemVC, to: self.itemViewTwo)
         
-        self.dateLabel.text = AppMessages.gitHubUserSince + String.space + String.colon + userInfo.created_at.convertToDisplayFormat()
+        self.dateLabel.text = AppMessages.gitHubUserSince + String.space + String.colon + String.space + userInfo.created_at.convertToDisplayFormat()
     }
     
     func layoutUI(){
