@@ -21,7 +21,8 @@ class GetUserInfoViewModel{
         self.userInfoDelegate = userInfoDelegate
         self.userName = userName
     }
-
+    
+    //Function to get the user info of a user
     func getGetUserInfo(){
         NetworkManager.sharedInstance.getUserInfo(for: self.userName) { (result) in
             switch result{

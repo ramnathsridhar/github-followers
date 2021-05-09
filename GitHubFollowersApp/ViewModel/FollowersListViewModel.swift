@@ -7,6 +7,7 @@
 
 import Foundation
 
+//Protocol methods to communicate with the corresponding view controller
 public protocol FollowersFlowDelegate:AnyObject{
     func getFollowersSuccessful(followersList:[FollowerModel])
     func getFollowersFailed(errorMessage:String)
@@ -16,7 +17,6 @@ public protocol FollowersFlowDelegate:AnyObject{
 
 public class FollowersListViewModel {
     
-   // public var followersList : [FollowerModel]
     public var pageNumber:Int
     public var followersDelegate:FollowersFlowDelegate?
     public var userName:String
@@ -46,6 +46,7 @@ public class FollowersListViewModel {
                         self.hasMoreFollowers = false
                     }
                     self.getTheAppendedListOfFollowers(newListOfFollowers: followersListFromResponse)
+                    //Check to see if the user has any followers
                     if self.appendedFollowersList.isEmpty{
                         self.followersDelegate?.getFollowersFailed(errorMessage: ErrorMessages.userHasNoFollowers.rawValue)
                     }else{
@@ -57,12 +58,15 @@ public class FollowersListViewModel {
         }
     }
     
+    //API call to get the userinformation of a user , given the username and then save the user as a favourite user
     func addCurrentUserAsFavourite(){
         NetworkManager.sharedInstance.getUserInfo(for: userName) { [weak self] result in
             guard let self = self else { return }
             
             switch result {
             case .success(let user):
+                //If the user information is recevied successfully , then save the user as a favourtie
+                //The user login string and the user avatar url are saved
                 let favorite = FollowerModel.init(login: user.login, avatar_url: user.avatar_url)
                 
                 PersistenceManager.updateWith(follower: favorite, actionType: .add) { [weak self] error in

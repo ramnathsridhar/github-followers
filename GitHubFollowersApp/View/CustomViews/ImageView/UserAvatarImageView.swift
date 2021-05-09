@@ -9,7 +9,6 @@ import UIKit
 
 class UserAvatarImageView: UIImageView {
     
-    let cache = NetworkManager.sharedInstance.cache
     let placeHoldermage = UIImage(named: ImageConstants.placeHolderImage)
     
     override init(frame: CGRect){

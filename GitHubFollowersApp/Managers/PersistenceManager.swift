@@ -7,6 +7,7 @@
 
 import Foundation
 
+//Actions which can be done using the persistence manager
 enum PersistenceActionType{
     case add , remove
 }
@@ -14,7 +15,7 @@ enum PersistenceActionType{
 enum PersistenceManager {
     static private let defaults = UserDefaults.standard
     
-    
+    //Key using which the favourites is saved
     enum Keys{
         static let favourites = "favourites"
     }

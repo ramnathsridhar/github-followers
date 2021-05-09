@@ -66,7 +66,6 @@ class FollowersListVC: UIViewController {
         let addFavButton = UIBarButtonItem.init(barButtonSystemItem: .add, target: self, action: #selector(addFavButtonTapped))
         addFavButton.accessibilityIdentifier = AccessibilityIdentifers.addFavouriteButton
         self.navigationItem.rightBarButtonItem = addFavButton
-        
     }
     
     @objc func addFavButtonTapped(){
@@ -124,7 +123,6 @@ extension FollowersListVC:FollowersFlowDelegate{
     }
 }
 
-
 //Extension to set up the collection view items , cell and size of cells
 extension FollowersListVC:UICollectionViewDelegate,UICollectionViewDelegateFlowLayout{
     
@@ -135,7 +133,6 @@ extension FollowersListVC:UICollectionViewDelegate,UICollectionViewDelegateFlowL
             return cell
         })
     }
-    
     
     //Configuration of the diffable data source for the collection view
     func configureDiffableDataSourceForCollectionView(){
@@ -180,7 +177,6 @@ extension FollowersListVC:UICollectionViewDelegate,UICollectionViewDelegateFlowL
             self.displayLoadingView()
             self.followersListVM?.getFollowers()
         }
-        
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -195,7 +191,6 @@ extension FollowersListVC:UICollectionViewDelegate,UICollectionViewDelegateFlowL
         self.present(navController, animated: true, completion: nil)
     }
 }
-
 
 extension FollowersListVC:FollowerListVCDelegate{
     func didRequestFollowers(for userName: String) {
