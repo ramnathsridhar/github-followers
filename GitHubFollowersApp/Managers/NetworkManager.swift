@@ -32,7 +32,7 @@ public class NetworkManager {
                 completed(.failure(ErrorMessages.unableToCompleteRequest))
             }
             //Second check to see the status code
-            //200 status code is recevied when the http requst return successfully
+            //200 status code is recevied when the http request return successfully
             guard let response = response as? HTTPURLResponse , response.statusCode == 200 else {
                 completed(.failure(ErrorMessages.invalidResponse))
                 return
@@ -57,31 +57,35 @@ public class NetworkManager {
     }
     
     //API call to get the userinfo when a username is passed
+    //The username of the user is passed as an argument
     func getUserInfo(for userName: String, completed: @escaping (Result<UserModel,ErrorMessages>) -> Void){
         let endpoint = baseURL + "\(userName)"
-                
+        //Check to see if the URL formed from the username is a valid URL
         guard let url = URL(string: endpoint) else {
             completed(.failure(.invalidUsername))
             return
         }
-        
+        //URLSession to make the API hit , passing the url
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
-            //If let has to be used for checking if error is nil
+            //First check to see if there is an error returned
+            //Usually error is not nil when there is a internet connection issue
             if let _ = error {
                 completed(.failure(.unableToCompleteRequest))
                 return
             }
-            
+            //Second check to see the status code
+            //200 status code is recevied when the http request return successfully
             guard let response = response as? HTTPURLResponse , response.statusCode == 200 else{
                 completed(.failure(.invalidResponse))
                 return
             }
-            
+            //Third check to see if data is received and not nil
             guard let data = data else{
                 completed(.failure(.invalidData))
                 return
             }
-            
+            //Decoding the data received into user model
+            //Will throw an error if deocding is unsuccessfull
             do{
                 let decoder = JSONDecoder.init()
                 let user = try decoder.decode(UserModel.self, from: data)
@@ -90,7 +94,7 @@ public class NetworkManager {
                 completed(.failure(.invalidData))
             }
         }
+        //Following is always called when making using an URLSession to start the API request
         task.resume()
     }
-    
 }

@@ -7,6 +7,7 @@
 
 import UIKit
 
+//Types of user info custom views which are displayed in the user infro screem
 enum UserInfoType {
         case repos , gists , followers , following
 }

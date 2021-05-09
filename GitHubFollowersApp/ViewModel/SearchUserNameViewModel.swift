@@ -23,6 +23,7 @@ class SearchUserNameViewModel{
         self.enteredUsername = String.empty
     }
     
+    //Function to check if the username entered is valid before proceeding to the next page
     func getFollowersForUser(){
         if validateUserName(){
             self.userNameDelegate?.getUserNameFollowersSuccessful()
@@ -32,6 +33,7 @@ class SearchUserNameViewModel{
     }
     
     //Validations to be done on the entered username
+    //Will return true if the username is not empty
     func validateUserName() -> Bool{
         return !self.enteredUsername.isEmpty
     }

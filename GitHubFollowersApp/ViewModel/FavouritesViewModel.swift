@@ -7,6 +7,7 @@
 
 import Foundation
 
+//Protocol methods to communicate with the corresponding view controller
 protocol FavouritesDelegate:AnyObject{
     func getFavouritesSuccessful()
     func noFavouritesAdded()
@@ -24,8 +25,9 @@ class FavouritesViewModel{
         self.favouriteList = favouriteList
     }
     
-    //Function to get the favourites ssave by user
+    //Function to get the favourites saved by user from userdefaults
     func getFavourites(){
+        //First the favourites added is retrieved
             PersistenceManager.retrieveFavourites { [weak self] (result) in
                 switch result {
                 case .success(let favouritesList):
