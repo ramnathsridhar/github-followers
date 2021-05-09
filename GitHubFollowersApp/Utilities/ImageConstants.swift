@@ -1,8 +1,8 @@
 //
-//  AppSymbols.swift
+//  ImageConstants.swift
 //  GitHubFollowersApp
 //
-//  Created by Ramnath Sridhar on 08/05/21.
+//  Created by Ramnath Sridhar on 09/05/21.
 //
 
 import Foundation
