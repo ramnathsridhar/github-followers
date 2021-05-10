@@ -7,6 +7,9 @@
 
 import UIKit
 
+//Subclass of the info VC
+//The repo items to be displayed are defined here along with the types
+//The button action is implemented here to call the delegate methods
 class UserRepoItemVC: UserInfoItemVC {
     override func viewDidLoad() {
         super.viewDidLoad()

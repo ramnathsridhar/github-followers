@@ -6,7 +6,8 @@
 //
 
 import UIKit
-
+//Parent class from which the repo item VC and followr VC are created from
+//The stack views , the background views , the button action are defined here 
 class UserInfoItemVC: UIViewController {
     
     let stackView = UIStackView()

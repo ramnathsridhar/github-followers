@@ -7,13 +7,15 @@
 
 import UIKit
 
+//Protocol methods to communicate the click on github profile button and get followers button
 protocol UserInfoVCActionDelegate:class {
     func didTapGithubProfile(for user:UserModel)
     func didTapGetFollowers(for user:UserModel)
 }
 
+//Viewcontroller to display information about a particular user
 class UserInfoVC: UIViewController {
-
+    //View being added into this viewcontroller
     let headerView = UIView()
     let itemViewOne = UIView()
     let itemViewTwo = UIView()
@@ -42,26 +44,28 @@ class UserInfoVC: UIViewController {
         self.navigationItem.rightBarButtonItem = doneButton
     }
     
+    // Adding the elements on screen
     func configureUIElements(with userInfo:UserModel){
-        
+        //Adding the viewcontroller displaying header info
         self.add(childVC: UserInfoHeaderVC.init(user: userInfo), to: self.headerView)
-
-        
+        //Adding the viewcontroller displaying repo information
         let repoItemVC = UserRepoItemVC.init(user: userInfo)
-                           repoItemVC.delegate = self
-                           self.add(childVC: repoItemVC, to: self.itemViewOne)
-        
+        repoItemVC.delegate = self
+        self.add(childVC: repoItemVC, to: self.itemViewOne)
+        //Adding the viewcontroller displaying follower information
         let followerItemVC = UserFollowerItemVC.init(user: userInfo)
-                                 followerItemVC.delegate = self
-                                   self.add(childVC: followerItemVC, to: self.itemViewTwo)
-        
+        followerItemVC.delegate = self
+        self.add(childVC: followerItemVC, to: self.itemViewTwo)
+        //Adding the date label
         self.dateLabel.text = AppMessages.gitHubUserSince + String.space + String.colon + String.space + userInfo.created_at.convertToDisplayFormat()
     }
     
     func layoutUI(){
+        //The view being added are assinged to an array
         self.itemViews = [headerView,itemViewOne,itemViewTwo,dateLabel]
         let padding : CGFloat = 20
 
+        //The leading and trailing constraints for all the views being added are common
         for itemView in itemViews{
             view.addSubview(itemView)
             itemView.translatesAutoresizingMaskIntoConstraints = false
@@ -88,6 +92,7 @@ class UserInfoVC: UIViewController {
         dateLabel.textAlignment = .center
     }
     
+    //Function to add a childview controller into a container view
     func add(childVC:UIViewController,to containerView:UIView){
         addChild(childVC)
         containerView.addSubview(childVC.view)
@@ -95,6 +100,7 @@ class UserInfoVC: UIViewController {
         childVC.didMove(toParent: self)
     }
     
+    //Function to dissmis the user info VC
     @objc func dismissUserInfoVC(){
         self.dismiss(animated: true, completion: nil)
     }

@@ -8,7 +8,7 @@
 import UIKit
 
 class UserAvatarImageView: UIImageView {
-    
+    //The default image used
     let placeHoldermage = UIImage(named: ImageConstants.placeHolderImage)
     
     override init(frame: CGRect){
@@ -18,6 +18,7 @@ class UserAvatarImageView: UIImageView {
     
     required init?(coder: NSCoder){
         super.init(coder: coder)
+        self.configure()
     }
     
     private func configure(){

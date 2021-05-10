@@ -22,7 +22,7 @@ class GetUserInfoViewModel{
         self.userName = userName
     }
     
-    //Function to get the user info of a user
+    //Function to makethe API call to get the user info of a user
     func getGetUserInfo(){
         NetworkManager.sharedInstance.getUserInfo(for: self.userName) { (result) in
             switch result{

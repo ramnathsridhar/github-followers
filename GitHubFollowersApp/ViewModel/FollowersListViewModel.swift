@@ -43,6 +43,7 @@ public class FollowersListViewModel {
             switch result{
                 case .success(let followersListFromResponse):
                     if followersListFromResponse.isEmpty{
+                        //The flag is set to false so that if API call is not made again if there are no more followers
                         self.hasMoreFollowers = false
                     }
                     self.getTheAppendedListOfFollowers(newListOfFollowers: followersListFromResponse)
@@ -50,6 +51,7 @@ public class FollowersListViewModel {
                     if self.appendedFollowersList.isEmpty{
                         self.followersDelegate?.getFollowersFailed(errorMessage: ErrorMessages.userHasNoFollowers.rawValue)
                     }else{
+                        //If user has followers , then pass the array to the VC for display
                         self.followersDelegate?.getFollowersSuccessful(followersList: self.appendedFollowersList)
                     }
                 case .failure(let errorMessage):
@@ -71,11 +73,12 @@ public class FollowersListViewModel {
                 
                 PersistenceManager.updateWith(follower: favorite, actionType: .add) { [weak self] error in
                     guard let self = self else { return }
-                    
+                    //If the error is nil , then the add favourite is successfull
                     guard let error = error else {
                         self.followersDelegate?.addFavouriteSuccessul()
                         return
                     }
+                    //If the error is not nil , then the add favourite has failed
                     self.followersDelegate?.addFavouriteFailed(errorMessage: error.rawValue)
                 }
             case .failure(let error):
@@ -84,12 +87,12 @@ public class FollowersListViewModel {
         }
     }
     
-    
-    //Append the list of followers recevid after updating the pagination value
+    //Append the list of followers received after updating the pagination value
     func getTheAppendedListOfFollowers(newListOfFollowers:[FollowerModel]){
         self.appendedFollowersList.append(contentsOf: newListOfFollowers)
     }
     
+    //Function to get the filtered lsit of followers using the string entered in the search bar as the filter
     func getFilteredFollowersList(filter:String) -> [FollowerModel] {
         let filteredFollowers = self.appendedFollowersList.filter { $0.login.lowercased().contains(filter.lowercased()) }
         return filteredFollowers
