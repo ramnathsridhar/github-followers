@@ -26,5 +26,7 @@ class FavouriteTableViewCell: UITableViewCell {
     func setUserDetails(userName:String,userImageURL:String){
         self.userNameLabel.text = userName
         self.userLogoImageView.downloadImage(from: userImageURL)
+        self.userLogoImageView.clipsToBounds = true
+        self.userLogoImageView.layer.cornerRadius = 10
     }
 }

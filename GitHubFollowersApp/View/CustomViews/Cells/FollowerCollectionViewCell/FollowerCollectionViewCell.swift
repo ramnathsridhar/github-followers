@@ -22,6 +22,7 @@ class FollowerCollectionViewCell: UICollectionViewCell {
     func setFollowerDetails(follower:FollowerModel){
         self.followerCellImageView.downloadImage(from: follower.avatar_url)
         self.followerCellImageView.layer.cornerRadius = 10
+        self.followerCellImageView.clipsToBounds = true
 
         self.followerCellNameLabel.text = follower.login
         

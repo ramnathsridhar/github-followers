@@ -7,6 +7,7 @@
 
 import UIKit
 
+//View controllder displaying the header information of a user
 class UserInfoHeaderVC: UIViewController {
     
     let avatarImageView = UserAvatarImageView.init(frame: .zero)
@@ -45,6 +46,7 @@ class UserInfoHeaderVC: UIViewController {
         self.locationImageView.tintColor = .secondaryLabel
     }
     
+    //The subviews to display the Image , Username , Name , location , bio are added here
     func addSubView() {
         self.view.addSubview(avatarImageView)
         self.view.addSubview(userNameLabel)
