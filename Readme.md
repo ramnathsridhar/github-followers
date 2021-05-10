@@ -9,7 +9,7 @@ Technical information :
 4. Deployment target : iOS 14.4
 5. Xcode Version : 12.4
 6. Supported Devices : iPhone , iPad
-7. Third Party Software : GitHub API
+7. Third Party Software : GitHub APIs
 8. Github URL : https://github.com/ramnathsridhar/github-followers.git
 
 iOS Development Technologies and Concepts used :
