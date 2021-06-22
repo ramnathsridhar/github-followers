@@ -4,7 +4,7 @@ Project description : iOS GitHubFollowers app built using GitHub APIs to display
 
 Technical information :
 1. Development Language Used : Swift 5
-2. Current Version : 1.0
+2. Current Version : 1.0  
 3. Build : 1
 4. Deployment target : iOS 14.4
 5. Xcode Version : 12.4
